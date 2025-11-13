@@ -1,0 +1,24 @@
+package com.app.main;
+
+import java.util.*;
+
+public class HDFCMain {
+    public static void main(String[] args) {
+        List<Employee> empList = Arrays.asList(
+            new Employee("Ravi", "HDFC", 50000),
+            new Employee("Neha", "SBI", 60000),
+            new Employee("Amit", "HDFC", 55000),
+            new Employee("Priya", "ICICI", 65000),
+            new Employee("Kiran", "HDFC", 70000)
+        );
+
+        Company company = new Company("TechCorp", empList);
+
+        double totalPaidByHDFC = company.getEmployees().stream()
+                .filter(e -> e.getBank().equalsIgnoreCase("HDFC"))
+                .mapToDouble(Employee::getSalary)
+                .sum();
+
+        System.out.println("💰 Total amount paid by HDFC Bank: ₹" + totalPaidByHDFC);
+    }
+}

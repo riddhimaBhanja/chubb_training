@@ -1,0 +1,5 @@
+INFO: Server started
+ERROR: Database not found
+INFO: Request handled
+ERROR: Timeout while connecting
+INFO: Server stopped
