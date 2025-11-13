@@ -3,7 +3,7 @@ import java.util.regex.*;
 
 public class CountIndiaWhile_13Nov {
     public static void main(String[] args) {
-        // Use the full path of your file
+       
         String filename = "C:\\Users\\KIIT\\Downloads\\chubb_workspace\\CountIndia_13Nov\\text.txt";
 
         Pattern p = Pattern.compile("\\bIndia\\b", Pattern.CASE_INSENSITIVE);
