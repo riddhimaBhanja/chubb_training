@@ -1,0 +1,22 @@
+import java.nio.file.*;
+import java.io.IOException;
+import java.util.*;
+
+public class CountIndiaFunctional {
+    public static void main(String[] args) {
+        String filePath = "C:\\Users\\KIIT\\Downloads\\chubb_workspace\\CountIndiaProject\\data.txt";
+
+        try {
+           
+            long count = Files.lines(Paths.get(filePath))
+                    .flatMap(line -> Arrays.stream(line.split("\\s+")))
+                    .filter(word -> word.equalsIgnoreCase("India"))
+                    .count();
+
+            System.out.println("Number of times 'India' appears: " + count);
+
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+}
